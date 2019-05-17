@@ -2,6 +2,9 @@
   "name": "PracticeProject1",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "10.8.0"
+  },
   "main": "index.js",
   "scripts": {
     "build": "Webpack -p",
