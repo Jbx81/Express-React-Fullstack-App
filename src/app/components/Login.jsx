@@ -6,7 +6,7 @@ const LoginComponent = ({authenticateUser, authenticated})=> {
     return <div>
         <h2>
             Please login
-        </h2>
+        </h2> 
         <form onSubmit={authenticateUser}>
             <input type="text" placeholder="username" name="username" defaultValue="Dev"/>
             <input type="password" placeholder="password" name="password" defaultValue="" />

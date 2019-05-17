@@ -13,6 +13,8 @@ export const store = createStore(
     session(userSession = defaultState.session || {}, action) {
       let {type, authenticated, session} = action;
       switch (type) {
+        case mutations.SET_STATE:
+          return {...userSession, id:action.state.session.id};
         case mutations.REQUEST_AUTHENTICATE_USER:
           return {...userSession, authenticated: mutations.AUTHENTICATING};
         case mutations.PROCESSING_AUTHENTICATE_USER:
@@ -23,6 +25,8 @@ export const store = createStore(
     },
     tasks(tasks = defaultState.tasks, action) {
       switch (action.type) {
+        case mutations.SET_STATE:
+          return action.state.tasks;
         case mutations.CREATE_TASK:
           return [
             ...tasks,
@@ -59,8 +63,14 @@ export const store = createStore(
     comments(comments = defaultState.comments) {
       return comments;
     },
-    groups(groups = defaultState.groups) {
-      return groups;
+    groups(groups = defaultState.groups, action) {
+      switch (action.type) {
+        case mutations.SET_STATE:
+          return action.state.groups;
+        default:
+        return groups;
+      }
+      
     },
     users(users = defaultState.users) {
       return users;

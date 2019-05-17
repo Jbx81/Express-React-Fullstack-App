@@ -8,13 +8,13 @@ export const defaultState = {
       id: 'U1',
       name: 'Dev',
       friends: [`U2`],
-      password: md5("TUPLES"),
+      passwordHash: md5("TUPLES"),
     },
     {
       id: 'U2',
       name: 'C. Eeyo',
       friends: [],
-      password: md5("PROFITING"),
+      passwordHash: md5("PROFITING"),
     },
   ],
   groups: [
